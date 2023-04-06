@@ -3,7 +3,7 @@ import Movie from "../model/movie";
 
 const getMovies = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const movies = await Movie.find({}).limit(10);
+    const movies = await Movie.find({}).limit(100);
     if (!movies) {
       res
         .status(200)
