@@ -8,6 +8,7 @@ const getMovies = async (req: Request, res: Response, next: NextFunction) => {
   const total = await Movie.countDocuments();
   const pageCount = Math.ceil(total / limit);
   const skip = (page - 1) * limit;
+  console.log(skip);
   try {
     const movies = await Movie.find({}).skip(skip).limit(limit);
 
